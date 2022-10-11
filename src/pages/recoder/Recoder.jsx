@@ -5,7 +5,7 @@ const RecoderBlock = styled.div``;
 const Recoder = () => {
   return (
     <RecoderBlock>
-      
+      <span>Hi</span>
     </RecoderBlock>
   );
 };
