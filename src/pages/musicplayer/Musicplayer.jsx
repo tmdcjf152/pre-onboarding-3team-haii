@@ -1,13 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const MusicplayerBlock = styled.div``;
 
 const Musicplayer = () => {
-  return (
-    <MusicplayerBlock>
-      
-    </MusicplayerBlock>
-  );
+  return <MusicplayerBlock></MusicplayerBlock>;
 };
 
 export default Musicplayer;
