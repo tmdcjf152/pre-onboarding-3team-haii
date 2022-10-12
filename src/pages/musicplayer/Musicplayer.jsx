@@ -131,10 +131,17 @@ const Musicplayer = () => {
 						onMouseOver={() => {
 							setToggle(true);
 						}}
-            onMouseOut={()=>{setToggle(false)}}>
+						onMouseOut={() => {
+							setToggle(false);
+						}}>
 						<AiOutlineDownload />
 					</a>
-					{toggle == true ? <span className='downPopUp'><AiFillQuestionCircle/>아이콘을 Click 하면 음악이 다운로드 됩니다.</span> : null}
+					{toggle == true ? (
+						<span className='downPopUp'>
+							<AiFillQuestionCircle />
+							아이콘을 Click 하면 음악이 다운로드 됩니다.
+						</span>
+					) : null}
 				</div>
 			</div>
 		</MusicplayerBlock>
@@ -150,7 +157,7 @@ const MusicplayerBlock = styled.div`
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
-  padding: 50px 0px;
+	padding: 50px 0px;
 	.musicPlayerInnerBox {
 		position: relative;
 		padding: 50px;
@@ -185,7 +192,7 @@ const MusicplayerBlock = styled.div`
 				/* 타이머바 박스 */
 				.rhap_progress-section {
 					width: 100%;
-          margin-bottom: 30px;
+					margin-bottom: 30px;
 					/* 재생 시간 텍스트 */
 					.rhap_time {
 						color: #fff;
@@ -214,7 +221,7 @@ const MusicplayerBlock = styled.div`
 					.rhap_volume-bar-area {
 						position: absolute;
 						left: 190px;
-						width: 80px;
+						width: 60px;
 						.rhap_volume-bar {
 							background-color: #ffffff90;
 							.rhap_volume-indicator {
@@ -235,8 +242,8 @@ const MusicplayerBlock = styled.div`
 		.downLoadInnerBox {
 			position: relative;
 			position: absolute;
-			top: 72.5%;
-			right: 30%;
+			top: 65.5%;
+			right: 25%;
 			display: flex;
 			justify-content: flex-end;
 			align-items: center;
@@ -248,91 +255,92 @@ const MusicplayerBlock = styled.div`
 			}
 			.downPopUp {
 				position: absolute;
-				top: -25px;
-				left: 600px;
+				top: -20px;
+				left: 25%;
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				width: 300px;
+				width: 100%;
 				height: 30px;
-				background-color: #ffffff60;
-				box-shadow: 1px 1px 5px #00000030;
-        font: 13px/1 'apple';
-        svg{
-          font-size: 20px;
-          margin-right: 10px;
-        }
+				font: 13px/1 'apple';
+				color: #fff;
+				svg {
+					font-size: 20px;
+					margin-right: 10px;
+				}
 			}
 		}
 	}
 
- @media screen and (max-width: 768px) {
-  .musicPlayerInnerBox {
-		.musicImgBox {
-			width: 450px;
-			height: 450px;
-		}
-		.rhap_container {
-			.rhap_footer {
-				top: 30%;
+	@media screen and (max-width: 768px) {
+		.musicPlayerInnerBox {
+			.musicImgBox {
+				width: 350px;
+				height: 350px;
 			}
-		}
-		/* 다운로드 버튼 */
-		.downLoadInnerBox {
-			top: 68%;
-			right: 28%;
-			svg {
-				font-size: 30px;
+			.rhap_container {
+				.rhap_footer {
+					top: 30%;
+				}
 			}
-			.downPopUp {
-				position: absolute;
-				top: -20px;
-				left: 550px;
-				width: 200px;
-				height: 100%;
-        padding: 10px;
-        font: 13px/1 'apple';
-        svg{
-          font-size: 30px;
-        }
+			/* 다운로드 버튼 */
+			.downLoadInnerBox {
+				top: 63.5%;
+				right: 23%;
+				svg {
+					font-size: 30px;
+				}
+				.downPopUp {
+					display: none;
+				}
 			}
 		}
 	}
- }
- @media screen and (max-width: 540px) {
-  .musicPlayerInnerBox {
-		.musicImgBox {
-			width: 450px;
-			height: 450px;
-		}
-		.rhap_container {
-			.rhap_footer {
-				top: 30%;
+	@media screen and (max-width: 540px) {
+		.musicPlayerInnerBox {
+			.musicImgBox {
+				width: 350px;
+				height: 350px;
 			}
-		}
-		/* 다운로드 버튼 */
-		.downLoadInnerBox {
-			top: 68%;
-			right: 28%;
-			svg {
-				font-size: 30px;
+			.rhap_container {
+				.rhap_footer {
+					top: 30%;
+				}
 			}
-			.downPopUp {
-				position: absolute;
-				top: -20px;
-				left: 550px;
-				width: 200px;
-				height: 100%;
-        padding: 10px;
-        font: 13px/1 'apple';
-        svg{
-          font-size: 30px;
-        }
+			/* 다운로드 버튼 */
+			.downLoadInnerBox {
+				top: 63.5%;
+				right: 23%;
+				svg {
+					font-size: 30px;
+				}
+				.downPopUp {
+					display: none;
+				}
 			}
 		}
 	}
- }
- @media screen and (max-width: 375px) {
-  
- }
+	@media screen and (max-width: 375px) {
+		.musicPlayerInnerBox {
+			.musicImgBox {
+				width: 250px;
+				height: 250px;
+			}
+
+			.rhap_container {
+				.rhap_footer {
+					top: 30%;
+				}
+			}
+
+			/* 다운로드 버튼 */
+			.downLoadInnerBox {
+				top: 57%;
+				right: 15%;
+				svg {
+					font-size: 30px;
+				}
+			}
+		}
+	}
 `;
