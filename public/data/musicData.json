@@ -1,0 +1,10 @@
+{
+    "data": [
+        {
+            "musicImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWgoKAG03+7AAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
+            "musicName": "SingSongSing",
+            "musicArtist": "AdamErun",
+            "musicSrc": "http://example.com/audio.mp3"
+        }
+    ]
+}
