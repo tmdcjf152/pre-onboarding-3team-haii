@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
 export const RecorderBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 70%;
+  height: 80%;
   border: none solid black;
   border-radius: 2mm;
   padding: 30px;
@@ -76,7 +81,7 @@ export const RecorderBlock = styled.div`
     }
   }
   audio {
-    width: 18rem;
+    width: 15rem;
     height: 6rem;
   }
 `;
