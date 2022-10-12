@@ -14,6 +14,7 @@ function Recorder() {
   const [stat, setStat] = useState();
   const [audiotype, setAudiotype] = useState("audio/wav");
   const [audiosrc, setAudiosrc] = useState();
+  const [timer, setTimer] = useState(false);
 
   const { seconds, minutes, hours, isRunning, start, pause, reset } =
     useStopwatch({ autoStart: false });
@@ -31,11 +32,17 @@ function Recorder() {
   }
 
   function recordTimeOut(e) {
-    e &&
-      setTimeout(() => {
-        reset();
-        controlAudio("inactive");
-      }, 30000);
+    const inputSec = e.target.value;
+    controlAudio("recording");
+    start();
+    setTimeout(() => {
+      reset();
+      controlAudio("inactive");
+    }, inputSec);
+    console.log(inputSec);
+    // if (timer === true) {
+
+    // }
   }
 
   const audioProps = {
@@ -45,12 +52,15 @@ function Recorder() {
     timeslice: 1000,
     stopCallback: (e) => {
       setAudiosrc(window.URL.createObjectURL(e));
+      localStorage.setItem("musicSrc", e);
     },
 
     width: 200,
     height: 50,
     backgroundColor: "#cedbf6",
   };
+
+  console.log(localStorage.getItem("musicSrc"));
 
   return (
     <Wrapper>
@@ -78,14 +88,17 @@ function Recorder() {
         </div>
 
         <AudioAnalyser {...audioProps} className="audio_recorder_wrapper">
-          <div className="btn-box">
+          <div className="btn_box">
             <button
               className="btn_start"
               onClick={() => {
                 controlAudio("recording");
                 start();
+                recordTimeOut();
               }}
-              onMouseUp={recordTimeOut}
+              onMouseDown={() => {
+                setTimer(true);
+              }}
             >
               <FaMicrophone />
             </button>
@@ -108,6 +121,14 @@ function Recorder() {
               <FaStop />
             </button>
           </div>
+          <div className="time_selector">
+            <select onChange={(e) => recordTimeOut(e)}>
+              <option value="null">Please select recording time</option>
+              <option value="31000">30 Sec</option>
+              <option value="61000">1 min</option>
+              <option value="301000">5 min</option>
+            </select>
+          </div>
         </AudioAnalyser>
       </RecorderBlock>
     </Wrapper>
@@ -123,12 +144,4 @@ const Wrapper = styled.div`
   align-items: center;
   height: 100vh;
   z-index: 0;
-`;
-
-const RecordTimer = styled.div``;
-
-const AudioRecorder = styled.div`
-  /* audio::-webkit-media-controls-mute-button {
-    opacity: 0.3;
-  } */
 `;

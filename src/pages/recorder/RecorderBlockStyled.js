@@ -64,20 +64,27 @@ export const RecorderBlock = styled.div`
       background: linear-gradient(to right, #b993d6, #8ca6db);
       border-radius: 5mm;
     }
+    .btn_box {
+      button {
+        margin: 20px 10px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: none;
+        background-color: white;
+        color: black;
 
-    button {
-      margin: 20px 10px;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: none;
-      background-color: white;
-      color: black;
-      svg {
-        width: 50%;
-        height: 50%;
-        color: rgb(166, 154, 216);
+        svg {
+          width: 50%;
+          height: 50%;
+          color: rgb(166, 154, 216);
+        }
       }
+    }
+
+    .time_selector {
+      display: flex;
+      justify-content: center;
     }
   }
   audio {
