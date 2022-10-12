@@ -41,7 +41,7 @@ export const RecorderBlock = styled.div`
         }
       }
     }
-    p {
+    div {
       margin-bottom: 5px;
     }
   }
@@ -85,6 +85,14 @@ export const RecorderBlock = styled.div`
     .time_selector {
       display: flex;
       justify-content: center;
+      select {
+        width: 12.5rem;
+        height: 3rem;
+        background-color: #a2aad6;
+        color: white;
+        opacity: 0.7;
+        border-radius: 10px;
+      }
     }
   }
   audio {

@@ -14,7 +14,6 @@ function Recorder() {
   const [stat, setStat] = useState();
   const [audiotype, setAudiotype] = useState("audio/wav");
   const [audiosrc, setAudiosrc] = useState();
-  const [timer, setTimer] = useState(false);
 
   const { seconds, minutes, hours, isRunning, start, pause, reset } =
     useStopwatch({ autoStart: false });
@@ -39,10 +38,6 @@ function Recorder() {
       reset();
       controlAudio("inactive");
     }, inputSec);
-    console.log(inputSec);
-    // if (timer === true) {
-
-    // }
   }
 
   const audioProps = {
@@ -52,7 +47,7 @@ function Recorder() {
     timeslice: 1000,
     stopCallback: (e) => {
       setAudiosrc(window.URL.createObjectURL(e));
-      localStorage.setItem("musicSrc", e);
+      sessionStorage.setItem("musicSrc", URL.createObjectURL(e));
     },
 
     width: 200,
@@ -60,19 +55,17 @@ function Recorder() {
     backgroundColor: "#cedbf6",
   };
 
-  console.log(localStorage.getItem("musicSrc"));
-
   return (
     <Wrapper>
       <RecorderBlock>
         <div className="timer_wrapper">
           <h1>Audio Recorder</h1>
-          <p>Recording Time</p>
+          <div>Recording Time</div>
           <div className="timer_num_elem">
             <span>{hourTime}</span>:<span>{minuteTime}</span>:
             <span>{secondTime}</span>
           </div>
-          <p className="timer_progress_elem">
+          <div className="timer_progress_elem">
             {isRunning ? (
               <div>
                 Recording in progress
@@ -84,7 +77,7 @@ function Recorder() {
                 <FaMicrophoneSlash />
               </div>
             )}
-          </p>
+          </div>
         </div>
 
         <AudioAnalyser {...audioProps} className="audio_recorder_wrapper">
@@ -124,9 +117,9 @@ function Recorder() {
           <div className="time_selector">
             <select onChange={(e) => recordTimeOut(e)}>
               <option value="null">Please select recording time</option>
-              <option value="31000">30 Sec</option>
-              <option value="61000">1 min</option>
-              <option value="301000">5 min</option>
+              <option value="31000">Set Maximum 30 Sec</option>
+              <option value="61000">Set Maximum 1 min</option>
+              <option value="301000">Set Maximum 5 min</option>
             </select>
           </div>
         </AudioAnalyser>
