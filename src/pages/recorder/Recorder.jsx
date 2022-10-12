@@ -1,7 +1,14 @@
 import styled from "styled-components";
+import { RecorderBlock } from "./RecorderBlockStyled";
 import { useStopwatch } from "react-timer-hook";
 import React, { useState } from "react";
 import AudioAnalyser from "react-audio-analyser";
+import {
+  FaMicrophone,
+  FaPause,
+  FaStop,
+  FaMicrophoneSlash,
+} from "react-icons/fa";
 
 function Recorder() {
   const [stat, setStat] = useState();
@@ -28,39 +35,49 @@ function Recorder() {
       setTimeout(() => {
         reset();
         controlAudio("inactive");
-      }, 10000);
+      }, 30000);
   }
 
   const audioProps = {
     status: stat,
     audioType: audiotype,
     audioSrc: audiosrc,
-    timeslice: 1000, // timeslice（https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/start#Parameters）
-    // startCallback: (e) => {
-    //   console.log("succ start", e);
-    // },
-    // pauseCallback: (e) => {
-    //   console.log("succ pause", e);
-    // },
+    timeslice: 1000,
     stopCallback: (e) => {
       setAudiosrc(window.URL.createObjectURL(e));
-      console.log("succ stop", e);
     },
-    // onRecordCallback: (e) => {
-    //   console.log("recording", e);
-    // },
-    // errorCallback: (err) => {
-    //   console.log("error", err);
-    // },
-    // width: 100,
-    // height: 50,
-    backgroundColor: "black",
+
+    width: 200,
+    height: 50,
+    backgroundColor: "#cedbf6",
   };
 
   return (
-    <RecoderBlock>
-      <div>
-        <AudioAnalyser {...audioProps}>
+    <Wrapper>
+      <RecorderBlock>
+        <div className="timer_wrapper">
+          <h1>Audio Recorder</h1>
+          <p>Recording Time</p>
+          <div className="timer_num_elem">
+            <span>{hourTime}</span>:<span>{minuteTime}</span>:
+            <span>{secondTime}</span>
+          </div>
+          <p className="timer_progress_elem">
+            {isRunning ? (
+              <div>
+                Recording in progress
+                <FaMicrophone />
+              </div>
+            ) : (
+              <div>
+                Recording stopped
+                <FaMicrophoneSlash />
+              </div>
+            )}
+          </p>
+        </div>
+
+        <AudioAnalyser {...audioProps} className="audio_recorder_wrapper">
           <div className="btn-box">
             <button
               className="btn_start"
@@ -68,10 +85,9 @@ function Recorder() {
                 controlAudio("recording");
                 start();
               }}
-              // onMouseDown={start}
               onMouseUp={recordTimeOut}
             >
-              시작
+              <FaMicrophone />
             </button>
             <button
               className="btn_pause"
@@ -80,7 +96,7 @@ function Recorder() {
                 pause();
               }}
             >
-              일시정지
+              <FaPause />
             </button>
             <button
               className="btn_stop"
@@ -89,23 +105,30 @@ function Recorder() {
                 reset();
               }}
             >
-              멈춤
+              <FaStop />
             </button>
           </div>
         </AudioAnalyser>
-      </div>
-      <div style={{ textAlign: "center" }}>
-        <h1>Timer</h1>
-        <div style={{ fontSize: "50px" }}>
-          <span>{hourTime}</span>:<span>{minuteTime}</span>:
-          <span>{secondTime}</span>
-        </div>
-        <p>{isRunning ? "Recording" : "Stop Recording"}</p>
-      </div>
-    </RecoderBlock>
+      </RecorderBlock>
+    </Wrapper>
   );
 }
 
 export default Recorder;
 
-const RecoderBlock = styled.div``;
+const Wrapper = styled.div`
+  background: linear-gradient(to right, #b993d6, #8ca6db);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 0;
+`;
+
+const RecordTimer = styled.div``;
+
+const AudioRecorder = styled.div`
+  /* audio::-webkit-media-controls-mute-button {
+    opacity: 0.3;
+  } */
+`;
