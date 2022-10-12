@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
-const RecoderBlock = styled.div``;
-
 const Recoder = () => {
   return (
-    <RecoderBlock>
-      <span>Hi</span>
-    </RecoderBlock>
+    <RecoderBlock>녹음화면 </RecoderBlock>
   );
 };
 
+const RecoderBlock = styled.div`
+  margin-left: 300px;
+`;
 export default Recoder;

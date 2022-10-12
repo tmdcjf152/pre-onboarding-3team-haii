@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
-const MusicplayerBlock = styled.div``;
-
 const Musicplayer = () => {
   return (
-    <MusicplayerBlock>
-      
-    </MusicplayerBlock>
+    <MusicplayerBlock>음악재생화면</MusicplayerBlock>
   );
 };
-
+const MusicplayerBlock = styled.div`
+  margin-left: 300px;
+`;
 export default Musicplayer;
