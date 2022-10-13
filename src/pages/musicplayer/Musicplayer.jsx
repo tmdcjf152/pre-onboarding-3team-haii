@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
-import H5AudioPlayer from 'react-h5-audio-player';
+import { useState } from 'react';
 import 'react-h5-audio-player/lib/styles.css';
 import AudioPlayer from 'react-h5-audio-player';
 import styled from 'styled-components';
@@ -146,7 +145,7 @@ const Musicplayer = () => {
 			</div>
 		</MusicplayerBlock>
 	);
-};
+          }
 
 export default Musicplayer;
 
@@ -160,11 +159,13 @@ const MusicplayerBlock = styled.div`
 	padding: 50px 0px;
 	.musicPlayerInnerBox {
 		position: relative;
+width: 100%;
 		padding: 50px;
 		background-color: #ffffff40;
 		border-radius: 10px;
 		box-shadow: 1px 1px 5px #ccc;
 		.musicImgBox {
+      margin: 0 auto;
 			width: 400px;
 			height: 400px;
 			img {
