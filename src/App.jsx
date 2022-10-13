@@ -10,9 +10,13 @@ function App() {
 		<GlobalStyle />
 			<Navbar />
 			<Routes>
-				<Route path='/' element={<Mainpage />} />
+				{/* <Route path='/' element={<Mainpage />} />
 				<Route path='/record' element={<Recoder /> } />
-				<Route path='/player' element={<Musicplayer />} />
+				<Route path='/player' element={<Musicplayer />} /> */}
+
+			{/* <Route path='/' element={<Mainpage />} /> */}
+			<Route path='/' element={<Recoder />} />
+			<Route path='/player' element={<Musicplayer />} />
 			</Routes>
 	</>);
 }

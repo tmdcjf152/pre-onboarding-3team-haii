@@ -7,7 +7,7 @@ const Recoder = () => {
 };
 
 const RecoderBlock = styled.div`
-  margin-left: 330px;
+  margin-left: 300px;
    @media (max-width: 768px) {
         margin-left: 0;
     }

@@ -14,8 +14,8 @@ const Navbar = () => {
         <NavWrap>
             <div className='navInner'>
                 <img className='imgLogo' src='../../../src/assets/images/haii_logo.png' alt='하이로고' />
-                <Link to={'/'} className='navList'>메인</Link>
-                <Link to={'/record'} className='navList'>녹음화면</Link>
+                {/* <Link to={'/'} className='navList'>메인</Link> */}
+                <Link to={'/'} className='navList'>녹음화면</Link>
                 <Link to={'/player'} className='navList'>음악재생화면</Link>
             </div>
         </NavWrap>
@@ -27,8 +27,8 @@ const Navbar = () => {
                     <div className='navMb' onClick={handleClick}>
                         <CgClose className='closeBtn' onClick={() => setShowNav(showNav)} />
                         <img className='imgMbLogo' src='../../../src/assets/images/haii_logo.png' alt='하이로고' />
-                        <Link to={'/'} className='navMbList' onClick={() => setShowNav(showNav)}>메인</Link>
-                        <Link to={'/record'} className='navMbList' onClick={() => setShowNav(showNav)}>녹음화면</Link>
+                        {/* <Link to={'/'} className='navMbList' onClick={() => setShowNav(showNav)}>메인</Link> */}
+                        <Link to={'/'} className='navMbList' onClick={() => setShowNav(showNav)}>녹음화면</Link>
                         <Link to={'/player'} className='navMbList' onClick={() => setShowNav(showNav)}>음악재생화면</Link>
                     </div>
 
