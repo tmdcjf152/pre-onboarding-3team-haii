@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
-const MainpageBlock = styled.div``;
-
 const Mainpage = () => {
-	return <MainpageBlock>
-        
-    </MainpageBlock>;
+	return (
+        <MainpageBlock>메인</MainpageBlock>
+    )
 };
 
+const MainpageBlock = styled.div`
+    margin-left: 300px;
+     @media (max-width: 768px) {
+        margin-left: 0;
+    }
+`;
 export default Mainpage;

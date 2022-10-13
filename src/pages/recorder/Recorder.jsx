@@ -67,14 +67,14 @@ function Recorder() {
           </div>
           <div className="timer_progress_elem">
             {isRunning ? (
-              <div>
-                Recording in progress
+              <div className="recording">
                 <FaMicrophone />
+                Recording in progress
               </div>
             ) : (
-              <div>
-                Recording stopped
+              <div className="recording_stop">
                 <FaMicrophoneSlash />
+                Recording stopped
               </div>
             )}
           </div>
@@ -116,7 +116,7 @@ function Recorder() {
           </div>
           <div className="time_selector">
             <select onChange={(e) => recordTimeOut(e)}>
-              <option value="null">Please select recording time</option>
+              <option value="null">Select timer options </option>
               <option value="31000">Set Maximum 30 Sec</option>
               <option value="61000">Set Maximum 1 min</option>
               <option value="301000">Set Maximum 5 min</option>

@@ -5,7 +5,7 @@ export const RecorderBlock = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 100%;
   height: 80%;
   border: none solid black;
   border-radius: 2mm;
@@ -31,13 +31,22 @@ export const RecorderBlock = styled.div`
       margin-bottom: 5px;
     }
     .timer_progress_elem {
-      div {
+      .recording {
         display: flex;
         justify-content: center;
         align-items: center;
         svg {
-          margin-left: 5px;
-          color: white;
+          margin-right: 5px;
+          color: rgb(4, 171, 19);
+        }
+      }
+      .recording_stop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+          margin-right: 5px;
+          color: rgb(226, 37, 43);
         }
       }
     }
@@ -86,7 +95,9 @@ export const RecorderBlock = styled.div`
       display: flex;
       justify-content: center;
       select {
-        width: 12.5rem;
+        text-align: center;
+        padding: 0px 5px;
+        width: 13rem;
         height: 3rem;
         background-color: #a2aad6;
         color: white;
