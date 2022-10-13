@@ -2,19 +2,33 @@ import styled from "styled-components";
 
 export const RecorderBlock = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70%;
-  height: 80%;
-  border: none solid black;
-  border-radius: 2mm;
-  padding: 30px;
-  background-color: rgba(52, 52, 52, 0.3);
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding: 50px 0px;
   color: white;
-  z-index: 10;
-  box-shadow: 1px 1px 5px #ccc;
 
+  .mainInnerBox {
+    width: 100%;
+    height: 100%;
+    padding: 0px 200px;
+    margin-left: 300px;
+    .recordInnerBox {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding: 50px;
+      background-color: #ffffff30;
+      border-radius: 10px;
+      box-shadow: 5px 1px 5px #6b6e90;
+    }
+  }
   .timer_wrapper {
     z-index: 100;
     display: flex;
@@ -22,27 +36,41 @@ export const RecorderBlock = styled.div`
     justify-content: center;
     align-items: center;
     h1 {
-      font-weight: 600;
+      text-align: center;
+      font-weight: 700;
       font-size: 25px;
       margin-bottom: 10px;
+      color: #6b6e90;
     }
     .timer_num_elem {
       font-size: 30px;
       margin-bottom: 5px;
     }
     .timer_progress_elem {
-      div {
+      .recording {
         display: flex;
         justify-content: center;
         align-items: center;
         svg {
-          margin-left: 5px;
-          color: white;
+          margin-right: 5px;
+          color: rgb(4, 171, 19);
+          opacity: 0.7;
+        }
+      }
+      .recording_stop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+          margin-right: 5px;
+          color: rgb(226, 36, 42);
+          opacity: 0.7;
         }
       }
     }
-    p {
+    div {
       margin-bottom: 5px;
+      color: white;
     }
   }
 
@@ -58,9 +86,8 @@ export const RecorderBlock = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 240px;
+      width: 15rem;
       height: 80px;
-      opacity: 0.7;
       background: linear-gradient(to right, #b993d6, #8ca6db);
       border-radius: 5mm;
     }
@@ -85,10 +112,45 @@ export const RecorderBlock = styled.div`
     .time_selector {
       display: flex;
       justify-content: center;
+      select {
+        text-align: center;
+        width: 12.5rem;
+        height: 3rem;
+        background-color: #a2aad6;
+        color: white;
+        opacity: 0.7;
+        border-radius: 10px;
+      }
     }
   }
   audio {
     width: 15rem;
     height: 6rem;
+  }
+  @media screen and (max-width: 768px) {
+    .mainInnerBox {
+      padding: 0px 50px;
+      margin-left: 0px;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    .musicPlayerInnerBox {
+      .rhap_container {
+        .rhap_header {
+          padding: 20px 0px 50px 0px;
+          text-align: center;
+          font: bold 25px/1 "apple";
+          color: #fff;
+        }
+        .rhap_footer {
+          position: absolute;
+          left: 50%;
+          top: 40%;
+          transform: translate(-50%, -50%);
+          color: #fff;
+        }
+      }
+    }
   }
 `;

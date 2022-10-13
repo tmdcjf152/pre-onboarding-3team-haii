@@ -18,11 +18,14 @@ const Navbar = () => {
 				<div className='navInner'>
 					<div className='LogoInnerBox'>
                         <Zoom>
-						<Link to='/' className='logo'>
+						<span to='/' className='logo'>
 							HAII
-						</Link>
+						</span>
                         </Zoom>
 					</div>
+					<Link to={'/'} className='navList'>
+						Main
+					</Link>
 					<Link to={'/recorder'} className='navList'>
 						Recorder
 					</Link>
