@@ -1,4 +1,5 @@
 {
+  "homepage": "https://tmdcjf152.github.io/pre-onboarding-3team-1nd",
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
@@ -6,7 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "prop-types": "^15.8.1",
