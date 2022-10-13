@@ -4,7 +4,7 @@ import GlobalStyle from './GlobalStyle';
 import Mainpage from './pages/Mainpage';
 import Musicplayer from './pages/musicplayer/Musicplayer';
 import Navbar from './components/nav/Navbar';
-import Recoder from './pages/recoder/Recoder';
+import Recoder from './pages/recorder/Recorder';
 
 function App() {
 	return (<>
