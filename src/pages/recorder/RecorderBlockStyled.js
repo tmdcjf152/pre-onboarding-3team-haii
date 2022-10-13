@@ -15,7 +15,7 @@ export const RecorderBlock = styled.div`
     height: 100%;
     padding: 0px 200px;
     margin-left: 300px;
-    .musicPlayerInnerBox {
+    .recordInnerBox {
       position: relative;
       display: flex;
       justify-content: center;
@@ -36,6 +36,7 @@ export const RecorderBlock = styled.div`
     justify-content: center;
     align-items: center;
     h1 {
+      text-align: center;
       font-weight: 700;
       font-size: 25px;
       margin-bottom: 10px;
@@ -85,7 +86,7 @@ export const RecorderBlock = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 240px;
+      width: 15rem;
       height: 80px;
       background: linear-gradient(to right, #b993d6, #8ca6db);
       border-radius: 5mm;
@@ -125,5 +126,31 @@ export const RecorderBlock = styled.div`
   audio {
     width: 15rem;
     height: 6rem;
+  }
+  @media screen and (max-width: 768px) {
+    .mainInnerBox {
+      padding: 0px 50px;
+      margin-left: 0px;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    .musicPlayerInnerBox {
+      .rhap_container {
+        .rhap_header {
+          padding: 20px 0px 50px 0px;
+          text-align: center;
+          font: bold 25px/1 "apple";
+          color: #fff;
+        }
+        .rhap_footer {
+          position: absolute;
+          left: 50%;
+          top: 40%;
+          transform: translate(-50%, -50%);
+          color: #fff;
+        }
+      }
+    }
   }
 `;
