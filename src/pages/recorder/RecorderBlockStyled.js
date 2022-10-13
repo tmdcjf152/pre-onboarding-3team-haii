@@ -2,19 +2,33 @@ import styled from "styled-components";
 
 export const RecorderBlock = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 100%;
-  height: 80%;
-  border: none solid black;
-  border-radius: 2mm;
-  padding: 30px;
-  background-color: rgba(52, 52, 52, 0.3);
+  height: 100vh;
+  padding: 50px 0px;
   color: white;
-  z-index: 10;
-  box-shadow: 1px 1px 5px #ccc;
 
+  .mainInnerBox {
+    width: 100%;
+    height: 100%;
+    padding: 0px 200px;
+    margin-left: 300px;
+    .musicPlayerInnerBox {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding: 50px;
+      background-color: #ffffff30;
+      border-radius: 10px;
+      box-shadow: 5px 1px 5px #6b6e90;
+    }
+  }
   .timer_wrapper {
     z-index: 100;
     display: flex;
@@ -22,9 +36,10 @@ export const RecorderBlock = styled.div`
     justify-content: center;
     align-items: center;
     h1 {
-      font-weight: 600;
+      font-weight: 700;
       font-size: 25px;
       margin-bottom: 10px;
+      color: #6b6e90;
     }
     .timer_num_elem {
       font-size: 30px;
@@ -38,6 +53,7 @@ export const RecorderBlock = styled.div`
         svg {
           margin-right: 5px;
           color: rgb(4, 171, 19);
+          opacity: 0.7;
         }
       }
       .recording_stop {
@@ -46,12 +62,14 @@ export const RecorderBlock = styled.div`
         align-items: center;
         svg {
           margin-right: 5px;
-          color: rgb(226, 37, 43);
+          color: rgb(226, 36, 42);
+          opacity: 0.7;
         }
       }
     }
     div {
       margin-bottom: 5px;
+      color: white;
     }
   }
 
@@ -69,7 +87,6 @@ export const RecorderBlock = styled.div`
       align-items: center;
       width: 240px;
       height: 80px;
-      opacity: 0.7;
       background: linear-gradient(to right, #b993d6, #8ca6db);
       border-radius: 5mm;
     }

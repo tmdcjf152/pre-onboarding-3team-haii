@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     min-width:375px;
     font-family: 'Noto Sans KR', sans-serif;
+    background: linear-gradient(to right, #b993d6, #8ca6db);
   }  
 `;
 
