@@ -18,7 +18,7 @@ const Navbar = () => {
 				<div className='navInner'>
 					<div className='LogoInnerBox'>
                         <Zoom>
-						<Link to='/player' className='logo'>
+						<Link to='/' className='logo'>
 							HAII
 						</Link>
                         </Zoom>

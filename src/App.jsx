@@ -11,6 +11,7 @@ function App() {
 		<GlobalStyle />
 			<Navbar />
 			<Routes>
+			<Route path='/' element={<Mainpage />} />
 			<Route path='/recorder' element={<Recorder />} />
 			<Route path='/player' element={<Musicplayer />} />
 			</Routes>
