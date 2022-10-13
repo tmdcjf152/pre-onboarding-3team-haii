@@ -3,7 +3,8 @@ import 'react-h5-audio-player/lib/styles.css';
 import AudioPlayer from 'react-h5-audio-player';
 import styled from 'styled-components';
 import { AiOutlineDownload } from 'react-icons/ai';
-import { AiFillQuestionCircle } from 'react-icons/ai';
+import { Fade } from 'react-reveal';
+
 
 const Musicplayer = () => {
 	const musicTracks = [
@@ -106,6 +107,7 @@ const Musicplayer = () => {
 
 	return (
 		<MusicplayerBlock>
+			<Fade right >
 			<div className='mainInnerBox'>
 				<div className='musicPlayerInnerBox'>
 					{/* 앨범이미지 */}
@@ -139,6 +141,7 @@ const Musicplayer = () => {
 					</div>
 				</div>
 			</div>
+			</Fade>
 		</MusicplayerBlock>
 	);
 };
@@ -171,12 +174,15 @@ const MusicplayerBlock = styled.div`
 			border-radius: 10px;
 			box-shadow: 5px 1px 5px #6b6e90;
 			.musicImgBox {
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				margin: 0 auto;
 				max-width: 100%;
-				height: auto;
+				height: 100%;
 				img {
 					width: 100%;
-					height: 100%;
+					height: 70%;
 				}
 			}
 			.rhap_container {
