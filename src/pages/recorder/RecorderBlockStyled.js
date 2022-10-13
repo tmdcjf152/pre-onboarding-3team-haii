@@ -96,8 +96,7 @@ export const RecorderBlock = styled.div`
       justify-content: center;
       select {
         text-align: center;
-        padding: 0px 5px;
-        width: 13rem;
+        width: 12.5rem;
         height: 3rem;
         background-color: #a2aad6;
         color: white;

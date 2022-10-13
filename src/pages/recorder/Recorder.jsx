@@ -116,7 +116,7 @@ function Recorder() {
           </div>
           <div className="time_selector">
             <select onChange={(e) => recordTimeOut(e)}>
-              <option value="null">Select timer options </option>
+              <option value="null">Select timer option</option>
               <option value="31000">Set Maximum 30 Sec</option>
               <option value="61000">Set Maximum 1 min</option>
               <option value="301000">Set Maximum 5 min</option>
