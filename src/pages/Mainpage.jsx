@@ -1,13 +1,15 @@
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Musicplayer from './musicplayer/Musicplayer';
 import Recorder from './recorder/Recorder';
 
 const Mainpage = () => {
+const {page} = useParams()
 
 	return (
         <MainpageBlock>
             <div className="mainInnerBox">
-                <Musicplayer/>
+
             </div>
         </MainpageBlock>
     )

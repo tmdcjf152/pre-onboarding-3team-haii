@@ -106,35 +106,37 @@ const Musicplayer = () => {
 
 	return (
 		<MusicplayerBlock>
-			<div className='musicPlayerInnerBox'>
-				{/* 앨범이미지 */}
-				<div className='musicImgBox'>
-					<img src={musicTracks[trackIndex].img} alt='' />
-				</div>
-				{/* 오디오 제어 박스 */}
-				<AudioPlayer
-					layout='horizontal'
-					src={musicTracks[trackIndex].src}
-					showSkipControls={true}
-					showJumpControls={false}
-					header={`${musicTracks[trackIndex].musicName}`}
-					footer={`${musicTracks[trackIndex].musicArtist}`}
-					onClickPrevious={handleClickPrevious}
-					onClickNext={handleClickNext}
-					onEnded={handleClickNext}
-				/>
-				{/* 다운로드 버튼 */}
-				<div className='downLoadInnerBox'>
-					<a
-						href={musicTracks[trackIndex].src}
-						onMouseOver={() => {
-							setToggle(true);
-						}}
-						onMouseOut={() => {
-							setToggle(false);
-						}}>
-						<AiOutlineDownload />
-					</a>
+			<div className='mainInnerBox'>
+				<div className='musicPlayerInnerBox'>
+					{/* 앨범이미지 */}
+					<div className='musicImgBox'>
+						<img src={musicTracks[trackIndex].img} alt='' />
+					</div>
+					{/* 오디오 제어 박스 */}
+					<AudioPlayer
+						layout='horizontal'
+						src={musicTracks[trackIndex].src}
+						showSkipControls={true}
+						showJumpControls={false}
+						header={`${musicTracks[trackIndex].musicName}`}
+						footer={`${musicTracks[trackIndex].musicArtist}`}
+						onClickPrevious={handleClickPrevious}
+						onClickNext={handleClickNext}
+						onEnded={handleClickNext}
+					/>
+					{/* 다운로드 버튼 */}
+					<div className='downLoadInnerBox'>
+						<a
+							href={musicTracks[trackIndex].src}
+							onMouseOver={() => {
+								setToggle(true);
+							}}
+							onMouseOut={() => {
+								setToggle(false);
+							}}>
+							<AiOutlineDownload />
+						</a>
+					</div>
 				</div>
 			</div>
 		</MusicplayerBlock>
@@ -151,115 +153,127 @@ const MusicplayerBlock = styled.div`
 	width: 100%;
 	height: 100vh;
 	padding: 50px 0px;
-	.musicPlayerInnerBox {
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
+	.mainInnerBox {
 		width: 100%;
 		height: 100%;
-		padding: 50px;
-		background-color: #ffffff40;
-		border-radius: 10px;
-		box-shadow: 1px 1px 5px #ccc;
-		.musicImgBox {
-			margin: 0 auto;
-			max-width: 100%;
-			height: auto;
-			img {
-				width: 100%;
-				height: 100%;
-			}
-		}
-		.rhap_container {
+		padding: 0px 200px;
+		margin-left: 300px;
+		.musicPlayerInnerBox {
 			position: relative;
-			width: 100%;
-			background-color: initial;
-			box-shadow: none;
-			.rhap_header {
-				padding: 20px 0px 50px 0px;
-				text-align: center;
-				font: bold 30px/1 'apple';
-				color: #fff;
-			}
-			.rhap_main {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: column;
-				max-width: 100%;
-				/* 타이머바 박스 */
-				.rhap_progress-section {
-					width: 100%;
-					margin-bottom: 30px;
-					/* 재생 시간 텍스트 */
-					.rhap_time {
-						color: #fff;
-					}
-					.rhap_progress-container {
-						/* 프로그래스 바 */
-						.rhap_progress-bar {
-							.rhap_progress-indicator {
-								background-color: #fff;
-							}
-							.rhap_progress-filled {
-								background: linear-gradient(to right, #b993d6, #8ca6db);
-							}
-							.rhap_download-progress {
-								background-color: #ffffff90;
-							}
-						}
-					}
-				}
-				/* 조작버튼 박스 */
-				.rhap_controls-section {
-					position: relative;
-					padding-right: 80px;
-					button {
-						width: 100%;
-						color: #fff;
-					}
-					.rhap_volume-bar-area {
-						position: absolute;
-						left: 190px;
-						width: 60px;
-						.rhap_volume-bar {
-							background-color: #ffffff90;
-							.rhap_volume-indicator {
-								background-color: #fff;
-							}
-						}
-					}
-				}
-			}
-			.rhap_footer {
-				position: absolute;
-				left: 50%;
-				top: 40%;
-				transform: translate(-50%, -50%);
-				color: #fff;
-			}
-		}
-		/* 다운로드 버튼 */
-		.downLoadInnerBox {
-			position: relative;
-			position: absolute;
-			top: 5%;
-			right: 5%;
 			display: flex;
-			justify-content: flex-end;
+			justify-content: center;
 			align-items: center;
+			flex-direction: column;
 			width: 100%;
-			height: 40px;
-			svg {
-				font-size: 30px;
-				color: #ffffff60;
-				transition: all 0.5s;
-				&:hover {
+			height: 100%;
+			padding: 50px;
+			background-color: #ffffff30;
+			border-radius: 10px;
+			box-shadow: 5px 1px 5px #6b6e90;
+			.musicImgBox {
+				margin: 0 auto;
+				max-width: 100%;
+				height: auto;
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.rhap_container {
+				position: relative;
+				width: 100%;
+				background-color: initial;
+				box-shadow: none;
+				.rhap_header {
+					padding: 20px 0px 50px 0px;
+					text-align: center;
+					font: bold 30px/1 'apple';
+					color: #fff;
+				}
+				.rhap_main {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+					max-width: 100%;
+					/* 타이머바 박스 */
+					.rhap_progress-section {
+						width: 100%;
+						margin-bottom: 30px;
+						/* 재생 시간 텍스트 */
+						.rhap_time {
+							color: #fff;
+						}
+						.rhap_progress-container {
+							/* 프로그래스 바 */
+							.rhap_progress-bar {
+								.rhap_progress-indicator {
+									background-color: #fff;
+								}
+								.rhap_progress-filled {
+									background: linear-gradient(to right, #b993d6, #8ca6db);
+								}
+								.rhap_download-progress {
+									background-color: #ffffff90;
+								}
+							}
+						}
+					}
+					/* 조작버튼 박스 */
+					.rhap_controls-section {
+						position: relative;
+						padding-right: 80px;
+						button {
+							width: 100%;
+							color: #fff;
+						}
+						.rhap_volume-bar-area {
+							position: absolute;
+							left: 190px;
+							width: 60px;
+							.rhap_volume-bar {
+								background-color: #ffffff90;
+								.rhap_volume-indicator {
+									background-color: #fff;
+								}
+							}
+						}
+					}
+				}
+				.rhap_footer {
+					position: absolute;
+					left: 50%;
+					top: 40%;
+					transform: translate(-50%, -50%);
 					color: #fff;
 				}
 			}
+			/* 다운로드 버튼 */
+			.downLoadInnerBox {
+				position: relative;
+				position: absolute;
+				top: 1%;
+				right: 2%;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				width: 100%;
+				height: 40px;
+				svg {
+					font-size: 30px;
+					color: #ffffff60;
+					transition: all 0.5s;
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.mainInnerBox {
+			padding: 0px 50px;
+			margin-left: 0px;
 		}
 	}
 
