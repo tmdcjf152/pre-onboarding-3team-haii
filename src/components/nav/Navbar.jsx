@@ -6,6 +6,7 @@ import { CgMenu, CgClose } from 'react-icons/cg';
 const Navbar = () => {
     const [showNav, setShowNav] = useState(false);
     const handleClick = () => (
+        // console.log(showNav),
         setShowNav(!showNav)
     )
 
@@ -22,15 +23,17 @@ const Navbar = () => {
             <div className='navMbInner'>
                 <CgMenu className='mobileBar' onClick={handleClick} />
                 {showNav &&
-                    <div className='overlay' onClick={handleClick}>
-                        <div className='navMb' onClick={() => setShowNav(showNav)}>
-                            <CgClose className='closeBtn' onClick={handleClick} />
-                            <img className='imgMbLogo' src='../../../src/assets/images/haii_logo.png' alt='하이로고' />
-                            <Link to={'/'} className='navMbList' onClick={handleClick}>메인</Link>
-                            <Link to={'/record'} className='navMbList' onClick={handleClick}>녹음화면</Link>
-                            <Link to={'/player'} className='navMbList' onClick={handleClick}>음악재생화면</Link>
-                        </div>
+              
+                    <div className='navMb' onClick={handleClick}>
+                        <CgClose className='closeBtn' onClick={() => setShowNav(showNav)} />
+                        <img className='imgMbLogo' src='../../../src/assets/images/haii_logo.png' alt='하이로고' />
+                        <Link to={'/'} className='navMbList' onClick={() => setShowNav(showNav)}>메인</Link>
+                        <Link to={'/record'} className='navMbList' onClick={() => setShowNav(showNav)}>녹음화면</Link>
+                        <Link to={'/player'} className='navMbList' onClick={() => setShowNav(showNav)}>음악재생화면</Link>
                     </div>
+
+                    
+               
                 }
             </div>
         </NavMobile>
@@ -71,6 +74,8 @@ const NavMobile = styled.div`
             position: relative;
         }
         .navMbInner {
+            position: relative;
+            height: 100%;
             .mobileBar {
                 font-size: 30px;
                 display: none;
@@ -79,40 +84,40 @@ const NavMobile = styled.div`
                     position: absolute;
                     top: 30px;
                     left: 20px;
+                    color: #fff;
                 }
             }
-            .overlay {
-                position: fixed;
-                width: 100%;
-                height: 100%;
-                background-color:rgba(0, 0, 0, 0.3);
                 .navMb {
-                    background-color: #B4C3D5;
+                    background-color: #fff;
                     border-radius: 10px;
-                    box-shadow: 1px 1px 5px #ccc;
-                    height: 100%;
-                    width: 200px;
-                    position: absolute;
-                    top:0;
+                    box-shadow: 6px 4px 30px rgb(0 0 0 / 90%);
+                    height: auto;
+                    width: 96%;
+                    position: fixed;
+                    top: 10px;
+                    right: 0;
                     left: 0; 
+                    bottom: 10px;
+                    margin: 0 auto;
                     padding: 30px 20px;
                     .closeBtn {
                         font-size: 30px; 
-                        color :#fff;
-                        margin-bottom: 10px;
+                        color :#b993d6;
+                        margin-bottom: 50px;
                     }
                     .imgMbLogo {
                         display: block;;
-                        width: 50px;
-                        margin-bottom: 20px;
+                        width: 100px;
+                        margin-bottom: 30px;
                     }
                     .navMbList {
                         display: block;
-                        color: #fff;
-                        margin-bottom: 20px;
+                        color: #b993d6;
+                        margin-bottom: 30px;
+                        font-size: 20px;
                     }
                 }
-            }
+            
         }
 `
 export default Navbar;

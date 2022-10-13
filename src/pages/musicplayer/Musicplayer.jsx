@@ -6,7 +6,7 @@ const Musicplayer = () => {
   );
 };
 const MusicplayerBlock = styled.div`
-  margin-left: 300px;
+  margin-left: 330px;
       @media (max-width: 768px) {
         margin-left: 0;
     }
